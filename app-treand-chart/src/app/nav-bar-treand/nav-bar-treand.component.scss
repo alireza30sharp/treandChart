@@ -1,0 +1,64 @@
+
+
+  ul li {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 20px;
+    list-style-type: circle;
+    border-left: 1px solid #c9c9c9;
+    color: black;
+  }
+.item-select {
+  span {
+    width: 83%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+
+
+  ul li::before {
+    content: "\2022";
+    color: #3773ec;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+  }
+
+
+/deep/ .ng-input {
+  padding-right: 10px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100%;
+}
+
+/deep/ .ng-select {
+  .ng-select-container {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .ng-select-focused {
+    outline: none !important;
+    border: none !important;
+  }
+
+  .ng-arrow-wrapper {
+    display: none;
+  }
+}
+
+///یه سری کد های رنگی در سرویس ManageDataCompareService تعریف شده است
+//
+li.test::before {
+  color: #05c70b !important;
+}
+li.test1::before {
+  color: #ffa200 !important;
+}
+li.test2::before {
+  color: #3773ec !important;
+}
