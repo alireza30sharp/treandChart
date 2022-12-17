@@ -14,6 +14,9 @@ export function highchartsModules() {
 import { HIGHCHARTS_MODULES, ChartModule } from 'angular-highcharts';
 import { TreandComponent } from './treand/treand.component';
 import { NavBarTreandComponent } from './nav-bar-treand/nav-bar-treand.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NavBarTreandComponent } from './nav-bar-treand/nav-bar-treand.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
+    NgSelectModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },],
   bootstrap: [AppComponent]

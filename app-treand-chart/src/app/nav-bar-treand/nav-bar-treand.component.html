@@ -1,63 +1,62 @@
 <div class="d-flex compare-nav-wrapper align-items-start w-100">
 
-    <div class="w-100">
-      <ul class="item-select row">
-        <li *ngFor="let issue of listcompare" class="{{issue.setColorItem?.colorClass}} d-flex col-sm-3">
-          <ng-container *ngIf="!issue.isEdit;else edit">
-            <span> {{issue.text}}</span>
-            <div class="btn-group">
-              <i class="fontIcon pointer fo-trash ml-2 mr-2" (click)="removeIssue(issue)"></i>
-              <i class="fontIcon pointer fo-pencil" (click)="editIssueSelect(issue)"></i>
-            </div>
-          </ng-container>
-          <ng-template #edit>
-  
-            <div style="width:200px">
-              <ng-select [items]="listImportantEvents"
-                         [virtualScroll]="true"
-                         [loading]="loading"
-                         [addTag]="true"
-                         [(ngModel)]="selectedIssue"
-                         placeholder=""
-                         bindLabel="text"
-                         bindValue="id"
-                         [editableSearchTerm]="true"
-                         (scrollToEnd)="onScrollToEnd()"
-                         (change)="addIssue($event,issue)">
-              </ng-select>
-            </div>
-          </ng-template>
-        </li>
-  
-      </ul>
-  
-  
-      <div class="mr-5 pr-4" style="width:350px" *ngIf="listcompare?.length <4">
-        <span class="font-12" *ngIf="!isShowAdd;else showAdd" (click)="addItemToMenu()">
-        افزودن ...
-        </span>
-        <ng-template #showAdd>
-          <ng-select #selectComponent
-                     [items]="listImportantEvents"
-                     [virtualScroll]="true"
-                     [loading]="loading"
-                     [addTag]="true"
-                     placeholder="افزودن  برای مقایسه..."
-                     bindLabel="text"
-                     bindValue="id"
-                     [editableSearchTerm]="true"
-                     (scrollToEnd)="onScrollToEnd()"
-                     (change)="addIssue($event)">
-          </ng-select>
+  <div class="w-100">
+    <ul class="item-select row">
+      <li *ngFor="let issue of manageData.listcompare" class="{{issue.setColorItem?.colorClass}} d-flex col-sm-3">
+        <ng-container *ngIf="!issue.isEdit;else edit">
+          <span> {{issue.text}}</span>
+          <div class="btn-group">
+            <span class="fontIcon pointer fo-trash ml-2 mr-2" (click)="removeIssue(issue)">remove</span>
+            <span class="fontIcon pointer fo-pencil" (click)="editIssueSelect(issue)">edit</span>
+          </div>
+        </ng-container>
+        <ng-template #edit>
+
+          <div style="width:200px">
+            <ng-select [items]="listImportantEvents"
+                       [virtualScroll]="true"
+                       [loading]="loading"
+                       [addTag]="true"
+                       [(ngModel)]="selectedIssue"
+                       placeholder=""
+                       bindLabel="text"
+                       bindValue="id"
+                       [editableSearchTerm]="true"
+                       (scrollToEnd)="onScrollToEnd()"
+                       (change)="addIssue($event,issue)">
+            </ng-select>
+          </div>
         </ng-template>
-      </div>
-  
-  
+      </li>
+
+    </ul>
+
+
+    <div class="mr-5 pr-4" style="width:350px" *ngIf="manageData?.listcompare?.length <4">
+      <span class="font-12" *ngIf="!isShowAdd;else showAdd" (click)="addItemToMenu()">
+        افزودن مسئله برای مقایسه...
+      </span>
+      <ng-template #showAdd>
+        <ng-select #selectComponent
+                   [items]="listImportantEvents"
+                   [virtualScroll]="true"
+                   [loading]="loading"
+                   [addTag]="true"
+                   placeholder="افزودن مسئله برای مقایسه..."
+                   bindLabel="text"
+                   bindValue="id"
+                   [editableSearchTerm]="true"
+                   (scrollToEnd)="onScrollToEnd()"
+                   (change)="addIssue($event)">
+        </ng-select>
+      </ng-template>
     </div>
-  
-    
-  
+
+
   </div>
+
   
-  
-  
+
+</div>
+
+
