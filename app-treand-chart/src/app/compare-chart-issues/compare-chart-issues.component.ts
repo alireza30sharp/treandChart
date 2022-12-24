@@ -127,6 +127,7 @@ export class CompareChartIssuesComponent implements AfterViewInit, OnDestroy {
 
 
   preProsseingData(data, key) {
+    debugger
     this.data = data;
     const ids = [...new Set(data.map(f => f.SId))];
     const dates = [...new Set(data.map(f => f.d).sort((a: any, b: any) => b - a))];
@@ -151,7 +152,7 @@ export class CompareChartIssuesComponent implements AfterViewInit, OnDestroy {
     switch (this.filterType) {
       case 1:
         this.dataService.getFaragiryTrends(ids, this.filterSocial).subscribe((data: []) => {
-          this.preProsseingData(data, "Faragiry");
+          this.preProsseingData(data, "Nofooz");
         })
         break;
       case 2:
