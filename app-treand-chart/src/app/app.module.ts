@@ -18,13 +18,15 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CompareChartIssuesComponent } from './compare-chart-issues/compare-chart-issues.component';
+import { TimeBarChartComponent } from './time-bar-chart/time-bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreandComponent,
     NavBarTreandComponent,
-    CompareChartIssuesComponent
+    CompareChartIssuesComponent,
+    TimeBarChartComponent
   ],
   imports: [
     BrowserModule,

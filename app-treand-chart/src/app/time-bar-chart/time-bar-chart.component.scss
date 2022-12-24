@@ -1,0 +1,38 @@
+.title-header {
+  color: #3d79ed !important;
+  font-size: 14px;
+  background: none !important;
+  border: none !important;
+
+  span {
+    font-size: 7px;
+  }
+}
+
+.color-lbl {
+  font-size: 16px !important;
+  color: #000;
+  font-weight: bold;
+  position: relative;
+  top: 11px;
+  right: 18px;
+}
+
+.h-1-5-rem {
+  height: 1.5rem !important;
+}
+
+.btn-success {
+  font-size: 12px;
+  padding: 2px 10px;
+}
+
+.btn {
+  font-size: 11px;
+}
+::ng-deep .highcharts-navigator-series.highcharts-label {
+    text{
+
+  display: none;
+    }
+}

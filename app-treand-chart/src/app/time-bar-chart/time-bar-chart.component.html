@@ -1,0 +1,97 @@
+<!--<div id="container"></div>-->
+<div class="row d-flex">
+
+  <div class="col-6 text-right d-flex justify-content-start align-items-center pr-5 mt-2">
+    <div class="dropdown ml-2">نوار زمان</div>
+
+    <div class="dropdown mr-3 mt-1" *ngIf="InputHashTagForChartModel.IsHourSelect;else picker">
+      <button class="btn title-header btn-secondary dropdown-toggle" type="button" id="dropdownMenuTimbar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <ng-container [ngSwitch]="SelectTimePastDayesChartHourSelect">
+          <ng-container *ngSwitchCase="SelectTimePastDayesChartHour.Past3">
+            3 ساعت اخیر
+          </ng-container>
+          <ng-container *ngSwitchCase="SelectTimePastDayesChartHour.Past6">
+            6 ساعت اخیر
+          </ng-container>
+          <ng-container *ngSwitchCase="SelectTimePastDayesChartHour.Past12">
+            12 ساعت اخیر
+          </ng-container>
+          <ng-container *ngSwitchCase="SelectTimePastDayesChartHour.Past24">
+            24 ساعت اخیر
+          </ng-container>
+          <ng-container *ngSwitchCase="SelectTimePastDayesChartHour.Past48">
+            48 ساعت اخیر
+          </ng-container>
+        </ng-container>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuTimbar">
+        <span class="w-100 d-block mb-3 mt-1 pointer text-right dropdown-item"
+              (click)="selectTimeChart(SelectTimePastDayesChartHour.Past3)">  3 ساعت اخیر</span>
+        <span class="w-100 d-block mb-3 mt-1 pointer text-right dropdown-item"
+              (click)="selectTimeChart(SelectTimePastDayesChartHour.Past6)">  6 ساعت اخیر</span>
+        <span class="w-100 d-block mb-3 mt-1 pointer text-right dropdown-item"
+              (click)="selectTimeChart(SelectTimePastDayesChartHour.Past12)">12 ساعت اخیر</span>
+        <span class="w-100 d-block mb-3 mt-1 pointer text-right dropdown-item"
+              (click)="selectTimeChart(SelectTimePastDayesChartHour.Past24)"> 24 ساعت اخیر</span>
+        <span class="w-100 d-block mb-3 mt-1 pointer text-right dropdown-item"
+              (click)="selectTimeChart(SelectTimePastDayesChartHour.Past48)"> 48 ساعت اخیر</span>
+      </div>
+    </div>
+
+    <ng-template #picker>      
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" dir="ltr">
+        <label class="btn btn-light"
+               (click)="showChart(dailyChartType.RepeatCount)"
+               [class.active]="dailyChartModel.type === dailyChartType.RepeatCount">
+          <input type="radio" name="options" id="option1"> تعداد تکرار
+        </label>
+
+        <label class="btn btn-light"
+               (click)="showChart(dailyChartType.UserCount)"
+               [class.active]="dailyChartModel.type === dailyChartType.UserCount">
+          <input type="radio" name="options" id="option2"> تعداد کاربر
+        </label>        
+      </div>
+    </ng-template>
+
+  </div>
+
+  <div class="col-6 text-left d-flex justify-content-end pl-5">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input"
+             name="exampleRadios"
+             type="radio"
+             id="inlineCheckbox1"
+             (change)="IsHourChsnge()"
+             [(ngModel)]="InputHashTagForChartModel.IsHourSelect"
+             [value]="true">
+      <label class="form-check-label mr-1 font-12" for="inlineCheckbox1">ساعتی</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input"
+             name="exampleRadios"
+             type="radio"
+             id="inlineCheckbox2"
+             [(ngModel)]="InputHashTagForChartModel.IsHourSelect"
+             (change)="IsHourChsnge()"
+             [value]="false">
+      <label class="form-check-label mr-1 font-12" for="inlineCheckbox2">روزانه</label>
+    </div>
+  </div>
+
+
+  <div class="w-100 border-radius-10 col-12" *ngIf="InputHashTagForChartModel.IsHour">
+    <div id="ChartTime"></div>
+  </div>
+
+  <div class="w-100 border-radius-10 col-12" *ngIf="!InputHashTagForChartModel.IsHour">
+    <div *ngIf="dailyChartModel.type === dailyChartType.UserCount" class="w-100">
+      <div id="userCountChart"></div>
+    </div>
+    <div *ngIf="dailyChartModel.type === dailyChartType.RepeatCount" class="w-100">
+      <div id="repeatCountChart"></div>
+    </div>
+  </div>
+
+</div>
+
