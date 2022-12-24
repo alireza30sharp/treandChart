@@ -17,12 +17,14 @@ import { NavBarTreandComponent } from './nav-bar-treand/nav-bar-treand.component
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CompareChartIssuesComponent } from './compare-chart-issues/compare-chart-issues.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreandComponent,
-    NavBarTreandComponent
+    NavBarTreandComponent,
+    CompareChartIssuesComponent
   ],
   imports: [
     BrowserModule,

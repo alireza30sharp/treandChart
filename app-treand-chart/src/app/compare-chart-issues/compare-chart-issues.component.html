@@ -1,0 +1,12 @@
+<div class="d-flex w-25">
+  <select class="form-control form-control-sm mr-2" (change)="changeFilterSocial(1)">
+    <option *ngFor="let item of filter.social" [value]="item.id">{{ item.name }}</option>
+  </select>
+  <select class="form-control form-control-sm mr-2" (change)="changeFilterType(1)">
+    <option *ngFor="let item of filter.type" [value]="item.id">{{ item.name }}</option>
+  </select>
+  <select *ngIf="filterType ==3 || filterType == 4" class="form-control form-control-sm mr-2" (change)="changeStatusType(1)">
+    <option *ngFor="let item of filter.status" [value]="item.id">{{ item.name }}</option>
+  </select>
+</div>
+<div id="CompareChartIssuesContainer"></div>

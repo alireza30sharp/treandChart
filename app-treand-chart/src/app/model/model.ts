@@ -2,7 +2,7 @@ import { compareLocation } from "../enum/compareType";
 
 export class compareNavBarTop {
   compareType:any;
-    id: string;
+    id: string='12';
     text?: string;
     setColorItem?= new StyleColorChartAndTopMenuBullet();
     isEdit?: boolean = false;
