@@ -1,6 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 @Injectable()
   //سرویس ایجاد تاریخ سرور
 export class GenerateDateService  {
@@ -19,7 +20,8 @@ export class GenerateDateService  {
    */
   generateDateFromDate(model: any) {
     const rdsUrl ="";
-    return this.http.post<any>(rdsUrl, model);
+    return of({ FromDate: new Date(),ToDate: new Date()})
+   // return this.http.post<any>(rdsUrl, model);
   }
 
 

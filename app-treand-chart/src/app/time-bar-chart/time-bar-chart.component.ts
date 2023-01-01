@@ -349,6 +349,7 @@ export class TimeBarChartComponent implements AfterViewInit, OnInit {
   }
 
   IsHourChsnge() {
+    debugger
     //اگر ساعتی باشد باید 48 ساعت گذشته باشد
     if (this.InputHashTagForChartModel.IsHourSelect) {
 

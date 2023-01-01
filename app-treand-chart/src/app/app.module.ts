@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CompareChartIssuesComponent } from './compare-chart-issues/compare-chart-issues.component';
 import { TimeBarChartComponent } from './time-bar-chart/time-bar-chart.component';
+import { HashTagDataService } from './service/hashtag-data.service';
+import { GenerateDateService } from './service/generateDate.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { TimeBarChartComponent } from './time-bar-chart/time-bar-chart.component
     FormsModule,
     HttpClientModule
   ],
-  providers: [ { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },],
+  providers: [ { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
+  
+    HashTagDataService ,
+    GenerateDateService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
