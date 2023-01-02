@@ -35,8 +35,10 @@
             ],
             "scripts": [ 
               "node_modules/jquery/dist/jquery.min.js",
-            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "node_modules/highcharts/highstock.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/highcharts/highstock.js",
               "node_modules/highcharts/highcharts-3d.js",
               "node_modules/highcharts/highcharts-more.js",
               "node_modules/highcharts/modules/heatmap.js",
